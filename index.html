@@ -60,7 +60,7 @@
     <!-- Topbar -->
     <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
       <div>
-        <span class="text-[11px] font-bold tracking-widest uppercase text-blue-600">Panel de operaciones / Charly</span>
+        <span class="text-[11px] font-bold tracking-widest uppercase text-blue-600">Panel de operaciones / Checho</span>
         <h1 class="text-2xl sm:text-3xl font-display font-bold tracking-tight text-slate-900 mt-1">Centro de control IIoT ↗</h1>
         <p class="text-xs sm:text-sm text-slate-500 mt-1" id="modeSubtitle">Conectado al nodo ESP32_01</p>
       </div>
@@ -92,7 +92,7 @@
         <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center text-xl font-bold grid place-items-center">▣</div>
         <div>
           <span class="text-[10px] text-slate-400 font-semibold uppercase">Dispositivo</span>
-          <b class="text-xs text-slate-800 block truncate max-w-[220px]" id="deviceLabel">ESP32_01 (Charly)</b>
+          <b class="text-xs text-slate-800 block truncate max-w-[220px]" id="deviceLabel">ESP32_01 (Checho)</b>
         </div>
       </div>
     </section>
@@ -183,7 +183,7 @@
             </div>
             <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5">
               <span class="text-[10px] font-bold tracking-wider text-slate-400 uppercase block">Tópico Activo</span>
-              <b class="text-xs text-slate-800 mt-1 block truncate" id="detailTopic">cnad/curso_iot/grupo01/esp32_01/datos</b>
+              <b class="text-xs text-slate-800 mt-1 block truncate" id="detailTopic">indumaker/curso_iot/grupo01/esp32_01/datos</b>
             </div>
           </div>
         </div>
@@ -261,15 +261,15 @@
         </div>
         <div>
           <label class="block font-bold text-slate-700 mb-1.5" for="topicDatosInput">Tópico de Datos (ESP32_01)</label>
-          <input id="topicDatosInput" required class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 outline-none focus:border-blue-600" value="cnad/curso_iot/grupo01/esp32_01/datos" />
+          <input id="topicDatosInput" required class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 outline-none focus:border-blue-600" value="indumaker/curso_iot/grupo01/esp32_01/datos" />
         </div>
         <div>
           <label class="block font-bold text-slate-700 mb-1.5" for="topicLedSetInput">Tópico de Comando LED (set)</label>
-          <input id="topicLedSetInput" required class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 outline-none focus:border-blue-600" value="cnad/curso_iot/grupo01/esp32_01/led/set" />
+          <input id="topicLedSetInput" required class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 outline-none focus:border-blue-600" value="indumaker/curso_iot/grupo01/esp32_01/led/set" />
         </div>
         <div>
           <label class="block font-bold text-slate-700 mb-1.5" for="topicLedStatusInput">Tópico de Estado LED (status)</label>
-          <input id="topicLedStatusInput" required class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 outline-none focus:border-blue-600" value="cnad/curso_iot/grupo01/esp32_01/led/status" />
+          <input id="topicLedStatusInput" required class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 outline-none focus:border-blue-600" value="indumaker/curso_iot/grupo01/esp32_01/led/status" />
         </div>
 
         <div class="flex justify-end gap-3 pt-3">
@@ -289,9 +289,9 @@
       broker: 'wss://broker.hivemq.com:8884/mqtt',
       clientId: 'indumaker_dashboard_' + Math.random().toString(16).slice(2,10),
       topics: {
-        datos: 'cnad/curso_iot/grupo01/esp32_01/datos',
-        ledSet: 'cnad/curso_iot/grupo01/esp32_01/led/set',
-        ledStatus: 'cnad/curso_iot/grupo01/esp32_01/led/status'
+        datos: 'indumaker/curso_iot/grupo01/esp32_01/datos',
+        ledSet: 'indumaker/curso_iot/grupo01/esp32_01/led/set',
+        ledStatus: 'indumaker/curso_iot/grupo01/esp32_01/led/status'
       }
     };
 
@@ -470,7 +470,7 @@
         $('detailTopic').textContent = config.topics.datos;
 
         client.subscribe(topicsToSub, { qos: 0 }, err => {
-          if(!err) logEvent('Suscrito correctamente a los tópicos de Charly.');
+          if(!err) logEvent('Suscrito correctamente a los tópicos de Checho.');
         });
       });
 
